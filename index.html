@@ -9,7 +9,8 @@
         :root {
             --color-bg: #121212;
             --color-text: #e0e0e0;
-            --color-link: #4da6ff; /* A soft blue for the link so it is readable */
+            --color-link: #4da6ff;
+            --color-accent: #4da6ff; /* Matches link for mvp.css elements */
         }
 
         body {
@@ -20,25 +21,39 @@
         }
 
         main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh;
+            padding: 20px;
+        }
+
+        /* This container keeps everything exactly 400px wide or less */
+        .content-wrapper {
+            max-width: 400px;
+            width: 100%;
             text-align: center;
-            max-width: 600px;
-            margin: auto;
-            padding-top: 50px;
+        }
+
+        img {
+            margin-bottom: 20px;
         }
 
         a {
             color: var(--color-link);
-            text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <main>
-        <header>
-            <img src="https://raw.githubusercontent.com/antisteez/antisteez.github.io/refs/heads/main/antisteez-2026-web.svg" style="max-width: 100%; height: auto;" width="400" alt="Logo">
-        </header>
-        <p>A short paragraph goes here.</p>
-        <a href="https://google.com">A link goes here</a>
+        <div class="content-wrapper">
+            <header>
+                <img src="https://raw.githubusercontent.com/antisteez/antisteez.github.io/refs/heads/main/antisteez-2026-web.svg" style="max-width: 100%; height: auto;" width="400" alt="Logo">
+            </header>
+            <p>Your short paragraph goes here. By wrapping this in a specific container, the text will never be wider than the 400px logo above it.</p>
+            <a href="https://yourlink.com">Click here for your link</a>
+        </div>
     </main>
 </body>
 </html>
