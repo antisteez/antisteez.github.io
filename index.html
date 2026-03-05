@@ -23,10 +23,10 @@
 
         main {
             display: flex;
-            flex-wrap: wrap; /* Allows stacking on mobile */
+            flex-wrap: wrap;
             justify-content: center;
             align-items: flex-start;
-            gap: 10px; /* The 10px padding between blocks */
+            gap: 10px;
             min-height: 80vh;
             padding: 20px;
         }
@@ -41,6 +41,13 @@
             max-width: 290px;
             width: 100%;
             text-align: left;
+            min-height: 600px;
+        }
+
+        /* Forces the comment embed to fill the height */
+        #cusdis_thread iframe {
+            min-height: 600px !important;
+            width: 100% !important;
         }
 
         img {
