@@ -7,7 +7,6 @@
     <title>Antisteez.com</title>
     <style>
         :root {
-            /* This is the official Tailwind 'Gray 900' that Cusdis targets */
             --color-bg: #111827; 
             --color-text: #f3f4f6;
             --color-link: #3b82f6;
@@ -16,7 +15,7 @@
         body {
             background-color: var(--color-bg);
             color: var(--color-text);
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.5;
             font-size: 0.9rem;
             margin: 0;
@@ -27,8 +26,7 @@
             flex-wrap: wrap;
             justify-content: center;
             align-items: flex-start;
-            gap: 10px;
-            min-height: 80vh;
+            gap: 20px;
             padding: 20px;
         }
 
@@ -39,31 +37,62 @@
         }
 
         .right-block {
-            max-width: 290px;
+            max-width: 320px;
             width: 100%;
-            text-align: left;
-            min-height: 600px;
         }
 
-        #cusdis_thread iframe {
-            min-height: 600px !important;
-            width: 100% !important;
-            border: none !important;
-            /* Making the iframe transparent so it sits on your new color */
-            background-color: transparent !important;
-        }
-
-        img {
+        /* Guestbook Styles */
+        #comment-form {
+            background: #1f2937;
+            padding: 15px;
+            border-radius: 4px;
             margin-bottom: 20px;
+            border: 1px solid #374151;
         }
 
-        a {
-            color: var(--color-link);
-            text-decoration: underline;
+        #comment-form input, #comment-form textarea {
+            width: 100%;
+            margin-bottom: 10px;
+            background: #111827;
+            color: white;
+            border: 1px solid #4b5563;
+            padding: 8px;
+            font-size: 0.8rem;
         }
 
-        p {
-            margin-bottom: 1rem;
+        #comment-form button {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .comment-item {
+            border-bottom: 1px solid #374151;
+            padding: 15px 0;
+        }
+
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+
+        .comment-name {
+            font-weight: bold;
+            color: #3b82f6;
+        }
+
+        .comment-date {
+            font-size: 0.7rem;
+            color: #9ca3af;
+        }
+
+        .comment-body {
+            margin: 0;
+            color: #e5e7eb;
         }
     </style>
 </head>
@@ -71,23 +100,76 @@
     <main>
         <div class="left-block">
             <header>
-                <img src="https://raw.githubusercontent.com/antisteez/antisteez.github.io/refs/heads/main/antisteez-2026-web.svg" style="max-width: 100%; height: auto;" width="400" alt="Logo">
+                <img src="https://raw.githubusercontent.com/antisteez/antisteez.github.io/refs/heads/main/antisteez-2026-web.svg" width="400" alt="Logo">
             </header>
             <p>Your short paragraph goes here.</p>
             <a href="https://yourlink.com">Click here for your link</a>
         </div>
 
         <div class="right-block">
-            <div id="cusdis_thread"
-                data-host="https://cusdis.com"
-                data-app-id="558a3fd6-ab4c-4e3e-b04e-d2e7a1573e8c"
-                data-page-id="homepage"
-                data-page-url="https://antisteez.github.io"
-                data-page-title="Antisteez Home"
-                data-theme="dark"
-            ></div>
-            <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+            <h3>Guestbook</h3>
+            <form id="comment-form">
+                <input name="Name" type="text" placeholder="Your Name" required>
+                <textarea name="Comment" rows="3" placeholder="Leave a comment..." required></textarea>
+                <button type="submit" id="submit-btn">Post Comment</button>
+            </form>
+
+            <div id="comments-list">Loading comments...</div>
         </div>
     </main>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwsJXrHieq03Kh1Hrfi2mhg2igNoQfBh87sjgii0KNNg05B2Cts1J8YZj1XB1Yt8hL5/exec';
+        const form = document.getElementById('comment-form');
+        const list = document.getElementById('comments-list');
+
+        // Post a comment
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            const btn = document.getElementById('submit-btn');
+            btn.disabled = true;
+            btn.innerText = 'Posting...';
+
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(res => {
+                form.reset();
+                btn.disabled = false;
+                btn.innerText = 'Post Comment';
+                loadComments();
+            })
+            .catch(err => {
+                console.error('Error!', err.message);
+                btn.disabled = false;
+                btn.innerText = 'Post Comment';
+            });
+        });
+
+        // Load comments
+        function loadComments() {
+            fetch(scriptURL)
+            .then(res => res.json())
+            .then(data => {
+                if (data.length === 0) {
+                    list.innerHTML = '<p style="font-size: 0.8rem; color: #9ca3af;">No comments yet. Be the first!</p>';
+                    return;
+                }
+                // Showing newest first
+                list.innerHTML = data.reverse().map(item => `
+                    <div class="comment-item">
+                        <div class="comment-header">
+                            <span class="comment-name">${item.Name}</span>
+                            <span class="comment-date">${new Date(item.Date).toLocaleDateString()}</span>
+                        </div>
+                        <p class="comment-body">${item.Comment}</p>
+                    </div>
+                `).join('');
+            })
+            .catch(err => {
+                list.innerHTML = 'Error loading comments.';
+            });
+        }
+
+        loadComments();
+    </script>
 </body>
 </html>
