@@ -5,12 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/mvp.css">
     <title>Antisteez.com</title>
+
+
+
+
+
     <style>
         :root {
             --color-bg: #111827; 
             --color-text: #f3f4f6;
             --color-link: #3b82f6;
-            --color-border: #4b5563; /* This is the gray for your outlines */
+            --color-border: #4b5563;
             --color-input-bg: #0d121f; 
         }
 
@@ -43,6 +48,7 @@
             width: 100%;
         }
 
+        /* Headlines match your site text color */
         h3 {
             font-size: 1.1rem;
             border-bottom: 2px solid var(--color-link);
@@ -50,35 +56,33 @@
             margin-bottom: 25px;
             text-transform: uppercase;
             letter-spacing: 1px;
+            color: var(--color-text);
         }
 
-        /* Guestbook Form - Seamless Background */
         #comment-form {
             background: transparent;
             padding: 0;
             border: none;
-            box-shadow: none;
             margin-bottom: 40px;
         }
 
-        /* Text Boxes with Outlines */
+        /* Inputs now use the exact same font family and size as the rest of the site */
         #comment-form input, #comment-form textarea {
             width: 100%;
             margin-bottom: 12px;
             background: var(--color-input-bg);
-            color: white;
-            border: 1px solid var(--color-border); /* The outline you wanted */
+            color: var(--color-text);
+            font-family: inherit;
+            font-size: inherit;
+            border: 1px solid var(--color-border);
             padding: 12px;
-            font-size: 0.85rem;
             border-radius: 4px;
             transition: all 0.2s ease-in-out;
         }
 
-        /* Highlighting the outline when clicking */
         #comment-form input:focus, #comment-form textarea:focus {
             border-color: var(--color-link);
             outline: none;
-            box-shadow: 0 0 5px rgba(59, 130, 246, 0.3);
         }
 
         #comment-form button {
@@ -88,13 +92,13 @@
             padding: 12px;
             cursor: pointer;
             width: 100%;
+            font-family: inherit;
             font-weight: bold;
             text-transform: uppercase;
-            letter-spacing: 1px;
             border-radius: 4px;
         }
 
-        /* Comment List */
+        /* Comments now share the site's text color and size */
         .comment-item {
             border-bottom: 1px solid var(--color-border);
             padding: 20px 0;
@@ -108,23 +112,28 @@
         }
 
         .comment-name {
-            font-weight: 700;
+            font-weight: bold;
             color: var(--color-link);
-            font-size: 0.95rem;
         }
 
         .comment-date {
-            font-size: 0.7rem;
-            color: #6b7280;
+            font-size: 0.75rem;
+            opacity: 0.6;
             text-transform: uppercase;
         }
 
         .comment-body {
             margin: 0;
-            color: #d1d5db;
+            color: var(--color-text);
+            font-size: inherit;
             word-wrap: break-word;
         }
     </style>
+
+
+
+
+
 </head>
 <body>
     <main>
@@ -137,7 +146,7 @@
         </div>
 
         <div class="right-block">
-            <h3>Guestbook</h3>
+            <h3>Sign the Guestbook</h3>
             <form id="comment-form">
                 <input name="Name" type="text" placeholder="Your Name" required>
                 <textarea name="Comment" rows="3" placeholder="Leave a comment..." required></textarea>
