@@ -5,11 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/mvp.css">
     <title>Antisteez.com</title>
-
-
-
-
-
     <style>
         :root {
             --color-bg: #111827; 
@@ -35,6 +30,7 @@
             align-items: flex-start;
             gap: 40px;
             padding: 40px 20px;
+            border: none !important;
         }
 
         .left-block {
@@ -46,9 +42,12 @@
         .right-block {
             max-width: 320px;
             width: 100%;
+            border: none !important;
+            box-shadow: none !important;
+            background: transparent !important;
+            padding: 0 !important;
         }
 
-        /* Headlines match your site text color */
         h3 {
             font-size: 1.1rem;
             border-bottom: 2px solid var(--color-link);
@@ -60,13 +59,13 @@
         }
 
         #comment-form {
-            background: transparent;
-            padding: 0;
-            border: none;
+            background: transparent !important;
+            padding: 0 !important;
+            border: none !important;
             margin-bottom: 40px;
+            box-shadow: none !important;
         }
 
-        /* Inputs now use the exact same font family and size as the rest of the site */
         #comment-form input, #comment-form textarea {
             width: 100%;
             margin-bottom: 12px;
@@ -98,7 +97,6 @@
             border-radius: 4px;
         }
 
-        /* Comments now share the site's text color and size */
         .comment-item {
             border-bottom: 1px solid var(--color-border);
             padding: 20px 0;
@@ -129,11 +127,6 @@
             word-wrap: break-word;
         }
     </style>
-
-
-
-
-
 </head>
 <body>
     <main>
@@ -146,7 +139,7 @@
         </div>
 
         <div class="right-block">
-            <h3>Sign the Guestbook</h3>
+            <h3>Guestbook</h3>
             <form id="comment-form">
                 <input name="Name" type="text" placeholder="Your Name" required>
                 <textarea name="Comment" rows="3" placeholder="Leave a comment..." required></textarea>
@@ -162,7 +155,6 @@
         const form = document.getElementById('comment-form');
         const list = document.getElementById('comments-list');
 
-        // Post a comment
         form.addEventListener('submit', e => {
             e.preventDefault();
             const btn = document.getElementById('submit-btn');
@@ -183,16 +175,14 @@
             });
         });
 
-        // Load comments
         function loadComments() {
             fetch(scriptURL)
             .then(res => res.json())
             .then(data => {
                 if (data.length === 0) {
-                    list.innerHTML = '<p style="font-size: 0.8rem; color: #9ca3af;">No comments yet. Be the first!</p>';
+                    list.innerHTML = '<p style="font-size: 0.8rem; opacity: 0.6;">No comments yet. Be the first!</p>';
                     return;
                 }
-                // Showing newest first
                 list.innerHTML = data.reverse().map(item => `
                     <div class="comment-item">
                         <div class="comment-header">
