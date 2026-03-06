@@ -7,17 +7,22 @@
     <title>Antisteez.com</title>
     <style>
         :root {
-            --color-bg: #1a1d23;
-            --color-text: #e0e0e0;
-            --color-link: #4da6ff;
-            --color-accent: #4da6ff;
+            /* This sets the base color under the transparency */
+            --color-bg-base: #000000;
+            --color-text: #e5e7eb;
+            --color-link: #3b82f6;
+        }
+
+        html {
+            background-color: var(--color-bg-base);
         }
 
         body {
-            background-color: var(--color-bg);
+            /* This is the exact value you found */
+            background-color: rgba(0, 0, 0, 0.2);
             color: var(--color-text);
             font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
+            line-height: 1.5;
             font-size: 0.9rem;
             margin: 0;
         }
@@ -48,6 +53,8 @@
         #cusdis_thread iframe {
             min-height: 600px !important;
             width: 100% !important;
+            border: none !important;
+            background-color: transparent !important;
         }
 
         img {
@@ -87,4 +94,4 @@
         </div>
     </main>
 </body>
-</html>              
+</html>
