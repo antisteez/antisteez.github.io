@@ -59,12 +59,12 @@
             box-shadow: none !important;
             background: transparent !important;
             padding: 0 !important;
-            margin-top: 0; /* Aligned back to the top with the left block */
+            margin-top: 0;
         }
 
         h3 {
             font-size: 0.9rem;
-            border-bottom: none; /* Removed the line under the title */
+            border-bottom: none;
             display: inline-block;
             margin-bottom: 18px;
             text-transform: uppercase;
@@ -78,21 +78,33 @@
             border: none !important;
             margin-bottom: 30px;
             box-shadow: none !important;
+            width: 100%;
         }
 
-        #comment-form input, #comment-form textarea {
+        /* Ensuring all form elements are identical in width */
+        #comment-form input, 
+        #comment-form textarea, 
+        #comment-form button {
             width: 100%;
+            box-sizing: border-box; /* This keeps padding inside the 100% width */
+            display: block;
             margin-bottom: 10px;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+
+        #comment-form input, 
+        #comment-form textarea {
             background: var(--color-input-bg);
             color: var(--color-text);
-            font-family: inherit;
             font-size: 0.85rem;
             border: 1px solid var(--color-border);
             padding: 10px;
-            border-radius: 4px;
+            transition: all 0.2s ease-in-out;
         }
 
-        #comment-form input:focus, #comment-form textarea:focus {
+        #comment-form input:focus, 
+        #comment-form textarea:focus {
             border-color: var(--color-link);
             outline: none;
         }
@@ -103,11 +115,9 @@
             border: none;
             padding: 10px;
             cursor: pointer;
-            width: 100%;
-            font-family: inherit;
             font-weight: bold;
             text-transform: uppercase;
-            border-radius: 4px;
+            font-size: 0.85rem;
         }
 
         .comment-item {
@@ -155,7 +165,7 @@
         </div>
 
         <div class="right-block">
-            <h3>Tell us your Antisteez story.</h3>
+            <h3>SHARE YOUR ANTISTEEZ STORY BELOW</h3>
             <form id="comment-form">
                 <input name="Name" type="text" placeholder="Your Name" required>
                 <textarea name="Comment" rows="3" placeholder="Leave a comment..." required></textarea>
