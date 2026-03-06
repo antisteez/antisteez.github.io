@@ -28,7 +28,6 @@
         }
 
         /* LOGO INVERSION LOGIC */
-        /* Wordmark flips to black, Logomark (Red) stays exactly as it is */
         body.light-mode .wordmark {
             filter: invert(1);
         }
@@ -72,27 +71,27 @@
         header.top-logo {
             padding: 60px 20px 40px 20px;
             display: flex;
-            justify-content: center; /* Centers the whole logo unit */
-            align-items: center;    /* Keeps mark and text vertically aligned */
+            justify-content: center; 
+            align-items: center;    
         }
         
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 0; /* Ensures no space between mark and wordmark */
+            gap: 0; 
             max-width: 600px;
             width: 100%;
         }
 
         .logo-mark {
             height: auto;
-            width: 12%; /* Scale this based on your design preference */
+            width: 18%; /* Increased for more visual presence */
             display: block;
         }
 
         .wordmark {
             height: auto;
-            width: 88%; /* Complements the logo-mark width */
+            width: 82%; 
             display: block;
             transition: filter 0.3s;
         }
