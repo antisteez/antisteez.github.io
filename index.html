@@ -7,19 +7,14 @@
     <title>Antisteez.com</title>
     <style>
         :root {
-            /* This sets the base color under the transparency */
-            --color-bg-base: #000000;
-            --color-text: #e5e7eb;
+            /* This is the official Tailwind 'Gray 900' that Cusdis targets */
+            --color-bg: #111827; 
+            --color-text: #f3f4f6;
             --color-link: #3b82f6;
         }
 
-        html {
-            background-color: var(--color-bg-base);
-        }
-
         body {
-            /* This is the exact value you found */
-            background-color: rgba(0, 0, 0, 0.2);
+            background-color: var(--color-bg);
             color: var(--color-text);
             font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.5;
@@ -54,6 +49,7 @@
             min-height: 600px !important;
             width: 100% !important;
             border: none !important;
+            /* Making the iframe transparent so it sits on your new color */
             background-color: transparent !important;
         }
 
