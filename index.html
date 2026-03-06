@@ -9,7 +9,7 @@
         :root {
             --color-bg: #111827; 
             --color-text: #f3f4f6;
-            --color-link: #3b82f6;
+            --color-link: #9ca3af; /* Nice grey for links */
             --color-border: #4b5563;
             --color-input-bg: #0d121f; 
         }
@@ -49,7 +49,11 @@
         .left-block {
             max-width: 400px;
             width: 100%;
-            text-align: center;
+            text-align: left; /* Left justified as requested */
+        }
+
+        .left-block * {
+            text-align: left;
         }
 
         .right-block {
@@ -81,12 +85,11 @@
             width: 100%;
         }
 
-        /* Ensuring all form elements are identical in width */
         #comment-form input, 
         #comment-form textarea, 
         #comment-form button {
             width: 100%;
-            box-sizing: border-box; /* This keeps padding inside the 100% width */
+            box-sizing: border-box;
             display: block;
             margin-bottom: 10px;
             border-radius: 4px;
@@ -110,7 +113,7 @@
         }
 
         #comment-form button {
-            background: var(--color-link);
+            background: #374151; /* Grey color to match site tone */
             color: white;
             border: none;
             padding: 10px;
@@ -118,6 +121,15 @@
             font-weight: bold;
             text-transform: uppercase;
             font-size: 0.85rem;
+        }
+
+        #comment-form button:hover {
+            background: #4b5563;
+        }
+
+        a {
+            color: var(--color-link);
+            text-decoration: underline;
         }
 
         .comment-item {
