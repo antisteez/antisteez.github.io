@@ -3,7 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Antisteez.com</title>
+    <meta name="title" content="Antisteez.com">
+    <meta name="description" content="A timestamp for the culture. Honoring the sounds and stories that defined the Miami underground and the 15th anniversary of the Antisteez podcast mixes on @Gotchaopin.">
+
+    <link rel="icon" type="image/svg+xml" href="https://raw.githubusercontent.com/antisteez/antisteez.github.io/refs/heads/main/antisteez-2026-logomark.svg">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://antisteez.com/">
+    <meta property="og:title" content="Antisteez.com">
+    <meta property="og:description" content="A timestamp for the culture. Honoring the Miami underground and the 15th anniversary of the Antisteez podcast mixes.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/antisteez/antisteez.github.io/refs/heads/main/antisteez-2026-social.png">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://antisteez.com/">
+    <meta property="twitter:title" content="Antisteez.com">
+    <meta property="twitter:description" content="A timestamp for the culture. Honoring the Miami underground and the 15th anniversary of the Antisteez podcast mixes.">
+    <meta property="twitter:image" content="https://raw.githubusercontent.com/antisteez/antisteez.github.io/refs/heads/main/antisteez-2026-social.png">
+
     <style>
         /* CORE THEME - TRUE BLACK */
         :root {
@@ -27,7 +45,7 @@
             --color-btn-hover: #404040;
         }
 
-        /* LOGO INVERSION LOGIC */
+        /* LOGO INVERSION */
         body.light-mode .wordmark {
             filter: invert(1);
         }
@@ -67,14 +85,37 @@
             color: var(--color-text);
         }
 
-        /* LOGO HEADER LAYOUT */
+        /* SCROLL INDICATOR */
+        #scroll-indicator {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--color-link);
+            font-size: 0.65rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            opacity: 0.6;
+            transition: opacity 0.5s;
+            pointer-events: none;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-6px); }
+            60% { transform: translateX(-50%) translateY(-3px); }
+        }
+        body.scrolled #scroll-indicator {
+            opacity: 0;
+        }
+
+        /* LOGO HEADER */
         header.top-logo {
             padding: 60px 20px 40px 20px;
             display: flex;
             justify-content: center; 
             align-items: center;    
         }
-        
         .logo-container {
             display: flex;
             align-items: center;
@@ -82,13 +123,11 @@
             max-width: 600px;
             width: 100%;
         }
-
         .logo-mark {
             height: auto;
-            width: 18%; /* Increased for more visual presence */
+            width: 18%; 
             display: block;
         }
-
         .wordmark {
             height: auto;
             width: 82%; 
@@ -102,7 +141,6 @@
             margin: 0 auto;
             padding: 0 20px 100px 20px;
         }
-
         .letter-section {
             text-align: center;
             margin-bottom: 80px; 
@@ -132,7 +170,6 @@
             color: var(--color-link);
             text-align: center;
         }
-
         #comment-form {
             max-width: 500px; 
             margin: 0 auto 50px auto;
@@ -163,7 +200,6 @@
             letter-spacing: 1px;
             border-radius: 4px;
         }
-
         #char-counter {
             font-size: 0.7rem;
             text-align: right;
@@ -172,7 +208,7 @@
             margin-bottom: 20px;
         }
 
-        /* COMMENTS LIST */
+        /* COMMENTS */
         .comment-item {
             border-bottom: 1px solid var(--color-border);
             padding: 25px 0;
@@ -203,6 +239,7 @@
 <body>
 
     <button id="theme-toggle">Theme</button>
+    <div id="scroll-indicator">Scroll</div>
 
     <header class="top-logo">
         <div class="logo-container">
@@ -223,7 +260,7 @@
 
             <p>We saw <strong>music scenes in Miami grow</strong> and find their footing because of what we were doing here. Beyond the music, <strong>real relationships and families started</strong> because of the space Antisteez created. That’s something you can’t just walk away from.</p>
 
-            <p>While this isn't a return to the old days or a promise of a new beginning for Antisteez, I couldn't let those contributions disappear forever. These sounds and stories are a part of us and they deserve a home. To celebrate 15 years, the old Antisteez podcast mixes are finally finding their way back to the light on <a href="https://www.youtube.com/@Gotchaopin" target="_blank"><strong>@Gotchaopin</strong></a>. This isn't an attempt to rebuild the past, but a way to finally honor the work and the people behind it—because even after all this time, <strong>there is still a message involved</strong>. It’s a way to close a door that was left hanging open for too long.</p>
+            <p>While this isn't a return to the old days or a promise of a new beginning for Antisteez, I couldn't let those contributions disappear forever. These sounds and stories are a part of us and they deserve a home. To celebrate 15 years, the old Antisteez podcast mixes are finally finding their way back to the light on <a href="https://www.youtube.com/@Gotchaopin" target="_blank">@Gotchaopin</a>. This isn't an attempt to rebuild the past, but a way to finally honor the work and the people behind it—because even after all this time, <strong>there is still a message involved</strong>. It’s a way to close a door that was left hanging open for too long.</p>
 
             <p>This letter, and these mixes, are for you. Thanks for still being here.</p>
             <br>
@@ -251,9 +288,19 @@
         const counter = document.getElementById('char-counter');
         const themeBtn = document.getElementById('theme-toggle');
 
+        // Theme Toggle Logic
         themeBtn.addEventListener('click', () => {
             document.body.classList.toggle('light-mode');
         });
+
+        // Scroll Indicator Logic
+        window.onscroll = function() {
+            if (window.scrollY > 50) {
+                document.body.classList.add('scrolled');
+            } else {
+                document.body.classList.remove('scrolled');
+            }
+        };
 
         textarea.addEventListener('input', () => {
             const length = textarea.value.length;
