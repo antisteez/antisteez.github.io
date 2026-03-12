@@ -85,6 +85,359 @@
             color: var(--color-text);
         }
 
+        /* SCROLL CTA BUTTON */
+        #scroll-cta {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 402px;
+            max-width: 90%; 
+            background: var(--color-btn);
+            color: white;
+            border: none;
+            padding: 14px;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            z-index: 2000;
+            transition: opacity 0.4s, visibility 0.4s;
+            text-align: center;
+        }
+        body.scrolled #scroll-cta {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        /* LOGO HEADER */
+        header.top-logo {
+            padding: 60px 20px 40px 20px;
+            display: flex;
+            justify-content: center; 
+            align-items: center;    
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0; 
+            max-width: 600px;
+            width: 100%;
+        }
+        .logo-mark {
+            height: auto;
+            width: 18%; 
+            display: block;
+        }
+        .wordmark {
+            height: auto;
+            width: 82%; 
+            display: block;
+            transition: filter 0.3s;
+        }
+
+        /* MAIN CONTENT */
+        .main-container {
+            max-width: 700px; 
+            margin: 0 auto;
+            padding: 0 20px 100px 20px;
+        }
+        .letter-section {
+            text-align: center;
+            margin-bottom: 80px; 
+        }
+        .letter-section p {
+            margin-bottom: 1.5rem;
+        }
+        .letter-section a {
+            color: var(--color-link);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .letter-section a:hover {
+            color: var(--color-text);
+        }
+
+        /* GUESTBOOK SECTION */
+        .guestbook-section {
+            border-top: 1px solid var(--color-border);
+            padding-top: 60px;
+        }
+        h3 {
+            font-size: 0.8rem;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--color-link);
+            text-align: center;
+        }
+        #comment-form {
+            max-width: 500px; 
+            margin: 0 auto 50px auto;
+        }
+        #comment-form input, 
+        #comment-form textarea {
+            background: var(--color-input-bg);
+            color: var(--color-text);
+            font-family: inherit;
+            font-size: 0.9rem;
+            border: 1px solid var(--color-border);
+            padding: 12px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            width: 100%;
+            display: block;
+        }
+        #comment-form button {
+            background: var(--color-btn);
+            color: white;
+            border: none;
+            padding: 14px;
+            width: 100%;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            border-radius: 4px;
+        }
+        #char-counter {
+            font-size: 0.7rem;
+            text-align: right;
+            opacity: 0.5;
+            margin-top: -10px;
+            margin-bottom: 20px;
+        }
+
+        /* COMMENTS */
+        .comment-item {
+            border-bottom: 1px solid var(--color-border);
+            padding: 25px 0;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        .comment-name {
+            font-weight: bold;
+            color: var(--color-link);
+            font-size: 0.85rem;
+        }
+        .comment-date {
+            font-size: 0.7rem;
+            opacity: 0.5;
+        }
+        .comment-body {
+            margin: 0;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="theme-toggle">Theme</button>
+    <button id="scroll-cta" onclick="document.querySelector('.guestbook-section').scrollIntoView({behavior: 'smooth'})">Sign the Guestbook</button>
+
+    <header class="top-logo">
+        <div class="logo-container">
+            <img src="https://raw.githubusercontent.com/antisteez/antisteez.github.io/refs/heads/main/antisteez-2026-logomark.svg" class="logo-mark" alt="Antisteez Mark">
+            <img src="https://raw.githubusercontent.com/antisteez/antisteez.github.io/refs/heads/main/antisteez-2026-wordmark.svg" class="wordmark" alt="Antisteez Wordmark">
+        </div>
+    </header>
+
+    <main class="main-container">
+        <section class="letter-section">
+            <p>I never intended for the music to go silent.</p>
+
+            <p>For a long time, Antisteez was built on a specific kind of raw energy. I had a vision for what this was supposed to be, but as time went on, that underground spirit started to drift toward something that <em>didn't feel like home anymore</em>. Internal friction eventually made the weight too much to carry, and I stepped back and handed the keys over, hoping the vision would stay intact. Instead, the site just died shortly after I left.</p>
+
+            <p>The servers stopped and the conversation just cut out. I spent years watching it stay that way. I watched Antisteez become a memory gathering dust while the domain danced around different owners who had nothing to do with us. People loved the site while it was around, but for most, it was easy to just move on to the next thing. <strong>I never did.</strong> This was my baby, and seeing the Antisteez community flatline was a <em>heavy silence</em> to live with.</p>
+
+            <p>Aging has a way of showing you the things you couldn't see in the heat of the moment. I’ve realized that some things are too important to stay buried just because of how things ended or the pride that followed the fallout. Antisteez was never just a bunch of random words and a collection of digital files. It was a <strong>timestamp</strong> for a lot of us. It was a shared language built by the writers who put their heart into the words and the vision. It was driven by the pulse of the Antisteez mixes—a massive nod to <strong>my brother Guilletine</strong>, who was the backbone of that sound and kept the culture moving. Without that synergy, none of it would have mattered.</p>
+
+            <p>We saw <strong>music scenes in Miami grow</strong> and find their footing because of what we were doing here. Beyond the music, <strong>real relationships and families started</strong> because of the space Antisteez created. That’s something you can’t just walk away from.</p>
+
+            <p>While this isn't a return to the old days or a promise of a new beginning for Antisteez, I couldn't let those contributions disappear forever. These sounds and stories are a part of us and they deserve a home. To celebrate 15 years, the old Antisteez podcast mixes are finally finding their way back to the light on <a href="https://www.youtube.com/@Gotchaopin" target="_blank">@Gotchaopin</a>. This isn't an attempt to rebuild the past, but a way to finally honor the work and the people behind it. It’s a way to close a door that was left hanging open for too long—because even after all this time, <strong>there is still a message involved</strong>.</p>
+
+            <p>This letter, and these mixes, are for you. Thanks for still being here.</p>
+            <br>
+            <p>— Lou</p>
+        </section>
+
+        <section class="guestbook-section">
+            <h3>SHARE YOUR ANTISTEEZ STORY</h3>
+            <form id="comment-form">
+                <input name="Name" type="text" placeholder="Your Name" required>
+                <textarea id="comment-text" name="Comment" rows="4" placeholder="Leave a comment..." maxlength="500" required></textarea>
+                <div id="char-counter">0 / 500</div>
+                <button type="submit" id="submit-btn">Post Comment</button>
+            </form>
+
+            <div id="comments-list">Loading comments...</div>
+        </section>
+    </main>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwsJXrHieq03Kh1Hrfi2mhg2igNoQfBh87sjgii0KNNg05B2Cts1J8YZj1XB1Yt8hL5/exec';
+        const form = document.getElementById('comment-form');
+        const list = document.getElementById('comments-list');
+        const textarea = document.getElementById('comment-text');
+        const counter = document.getElementById('char-counter');
+        const themeBtn = document.getElementById('theme-toggle');
+
+        themeBtn.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+        });
+
+        // Hide button when approaching guestbook
+        window.onscroll = function() {
+            const guestbookPos = document.querySelector('.guestbook-section').getBoundingClientRect().top;
+            if (guestbookPos < window.innerHeight - 100) {
+                document.body.classList.add('scrolled');
+            } else {
+                document.body.classList.remove('scrolled');
+            }
+        };
+
+        textarea.addEventListener('input', () => {
+            const length = textarea.value.length;
+            counter.innerText = `${length} / 500`;
+        });
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            const btn = document.getElementById('submit-btn');
+            btn.disabled = true;
+            btn.innerText = 'Posting...';
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(res => {
+                form.reset();
+                counter.innerText = '0 / 500';
+                btn.disabled = false;
+                btn.innerText = 'Post Comment';
+                loadComments();
+            })
+            .catch(err => {
+                btn.disabled = false;
+                btn.innerText = 'Post Comment';
+            });
+        });
+
+        function loadComments() {
+            fetch(scriptURL)
+            .then(res => res.json())
+            .then(data => {
+                if (data.length === 0) {
+                    list.innerHTML = '<p style="text-align: center; font-size: 0.8rem; opacity: 0.6;">No comments yet. Be the first!</p>';
+                    return;
+                }
+                list.innerHTML = data.reverse().map(item => `
+                    <div class="comment-item">
+                        <div class="comment-header">
+                            <span class="comment-name">${item.Name}</span>
+                            <span class="comment-date">${new Date(item.Date).toLocaleDateString()}</span>
+                        </div>
+                        <p class="comment-body">${item.Comment}</p>
+                    </div>
+                `).join('');
+            });
+        }
+        loadComments();
+    </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Antisteez.com</title>
+    <meta name="title" content="Antisteez.com">
+    <meta name="description" content="A timestamp for the culture. Honoring the sounds and stories that defined the Miami underground and the 15th anniversary of the Antisteez podcast mixes on @Gotchaopin.">
+
+    <link rel="icon" type="image/svg+xml" href="https://raw.githubusercontent.com/antisteez/antisteez.github.io/refs/heads/main/antisteez-2026-logomark.svg">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://antisteez.com/">
+    <meta property="og:title" content="Antisteez.com">
+    <meta property="og:description" content="A timestamp for the culture. Honoring the Miami underground and the 15th anniversary of the Antisteez podcast mixes.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/antisteez/antisteez.github.io/refs/heads/main/antisteez-2026-social.png">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://antisteez.com/">
+    <meta property="twitter:title" content="Antisteez.com">
+    <meta property="twitter:description" content="A timestamp for the culture. Honoring the Miami underground and the 15th anniversary of the Antisteez podcast mixes.">
+    <meta property="twitter:image" content="https://raw.githubusercontent.com/antisteez/antisteez.github.io/refs/heads/main/antisteez-2026-social.png">
+
+    <style>
+        /* CORE THEME - TRUE BLACK */
+        :root {
+            --color-bg: #0a0a0a; 
+            --color-text: #ffffff;
+            --color-link: #a1a1aa; 
+            --color-border: #262626;
+            --color-input-bg: #171717; 
+            --color-btn: #262626;
+            --color-btn-hover: #404040;
+        }
+
+        /* LIGHT MODE OVERRIDES */
+        body.light-mode {
+            --color-bg: #ffffff;
+            --color-text: #171717;
+            --color-link: #71717a;
+            --color-border: #e5e7eb;
+            --color-input-bg: #f9fafb;
+            --color-btn: #171717;
+            --color-btn-hover: #404040;
+        }
+
+        /* LOGO INVERSION */
+        body.light-mode .wordmark {
+            filter: invert(1);
+        }
+
+        /* RESET & BASE STYLES */
+        * { box-sizing: border-box; }
+        body {
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6; 
+            letter-spacing: -0.01rem;
+            font-size: 0.90rem; 
+            margin: 0;
+            padding: 0;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        /* THEME TOGGLE BUTTON */
+        #theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: transparent;
+            border: 1px solid var(--color-border);
+            color: var(--color-link);
+            padding: 6px 12px;
+            font-size: 0.65rem;
+            cursor: pointer;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            z-index: 1000;
+        }
+        #theme-toggle:hover {
+            border-color: var(--color-link);
+            color: var(--color-text);
+        }
+
         /* SCROLL INDICATOR */
         #scroll-indicator {
             position: fixed;
