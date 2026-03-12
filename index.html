@@ -6,21 +6,21 @@
     
     <title>Antisteez.com</title>
     <meta name="title" content="Antisteez.com">
-    <meta name="description" content="A timestamp for the culture. Honoring the sounds and stories that defined the Miami underground and the 15th anniversary of the Antisteez podcast mixes on @Gotchaopin.">
+    <meta name="description" content="Celebrating the 15th anniversary of the Antisteez podcast mixes on @Gotchaopin. Honoring the sounds, stories, and the Miami underground culture that defined a timestamp.">
 
     <link rel="icon" type="image/svg+xml" href="https://raw.githubusercontent.com/antisteez/antisteez.github.io/refs/heads/main/antisteez-2026-logomark.svg">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://antisteez.com/">
     <meta property="og:title" content="Antisteez.com">
-    <meta property="og:description" content="A timestamp for the culture. Honoring the Miami underground and the 15th anniversary of the Antisteez podcast mixes.">
-    <meta property="og:image" content="https://raw.githubusercontent.com/antisteez/antisteez.github.io/refs/heads/main/antisteez-2026-social.png?v=2">
+    <meta property="og:description" content="Celebrating the 15th anniversary of the Antisteez podcast mixes. A home for the sounds and stories of the Miami underground.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/antisteez/antisteez.github.io/refs/heads/main/antisteez-2026-social.png?v=3">
 
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://antisteez.com/">
     <meta property="twitter:title" content="Antisteez.com">
-    <meta property="twitter:description" content="A timestamp for the culture. Honoring the Miami underground and the 15th anniversary of the Antisteez podcast mixes.">
-    <meta property="twitter:image" content="https://raw.githubusercontent.com/antisteez/antisteez.github.io/refs/heads/main/antisteez-2026-social.png?v=2">
+    <meta property="twitter:description" content="Celebrating the 15th anniversary of the Antisteez podcast mixes. A home for the sounds and stories of the Miami underground.">
+    <meta property="twitter:image" content="https://raw.githubusercontent.com/antisteez/antisteez.github.io/refs/heads/main/antisteez-2026-social.png?v=3">
 
     <style>
         /* CORE THEME - TRUE BLACK */
@@ -112,19 +112,21 @@
             visibility: hidden;
         }
 
-        /* LOGO HEADER */
+        /* LOGO HEADER / SEO H1 */
         header.top-logo {
             padding: 60px 20px 40px 20px;
             display: flex;
             justify-content: center; 
             align-items: center;    
         }
-        .logo-container {
+        h1.logo-container {
             display: flex;
             align-items: center;
             gap: 0; 
             max-width: 600px;
             width: 100%;
+            margin: 0;
+            padding: 0;
         }
         .logo-mark {
             height: auto;
@@ -245,10 +247,10 @@
     <button id="scroll-cta" onclick="document.querySelector('.guestbook-section').scrollIntoView({behavior: 'smooth'})">Sign the Guestbook</button>
 
     <header class="top-logo">
-        <div class="logo-container">
+        <h1 class="logo-container">
             <img src="https://raw.githubusercontent.com/antisteez/antisteez.github.io/refs/heads/main/antisteez-2026-logomark.svg" class="logo-mark" alt="Antisteez Mark">
             <img src="https://raw.githubusercontent.com/antisteez/antisteez.github.io/refs/heads/main/antisteez-2026-wordmark.svg" class="wordmark" alt="Antisteez Wordmark">
-        </div>
+        </h1>
     </header>
 
     <main class="main-container">
@@ -295,7 +297,6 @@
             document.body.classList.toggle('light-mode');
         });
 
-        // Hide CTA button when guestbook is in view
         window.onscroll = function() {
             const guestbookPos = document.querySelector('.guestbook-section').getBoundingClientRect().top;
             if (guestbookPos < window.innerHeight - 100) {
