@@ -3,6 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antisteez.com</title>
+    <meta name="description" content="Celebrating the 15th anniversary of the Antisteez podcast mixes on @Gotchaopin.">
+    
+    <link rel="icon" type="image/svg+xml" href="https://raw.githubusercontent.com/antisteez/antisteez.github.io/refs/heads/main/antisteez-2026-logomark.svg">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://antisteez.com/">
+    <meta property="og:title" content="Antisteez.com">
+    <meta property="og:description" content="Celebrating the 15th anniversary of the Antisteez podcast mixes.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/antisteez/antisteez.github.io/refs/heads/main/antisteez-2026-social.png?v=3">
+
+    <style>
+        :root {
+            --color-bg: #0a0a0a; 
+            --color-text: #ffffff;
+            --color-link: #a1a1aa; 
+            --color-border: #262626;
+            --color-accent: #ec2024;
+        }
+
+        body.light-mode {
+            --color-bg: #ffffff;
+            --color-text: #171717;
+            --color-link: #71717a;
+            --color-border: #e5e7eb;
+        }
+
+        body.light-mode .wordmark { filter: invert(1); }
+
+        * { box-sizing: border-box; }
+        body {
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6; font-size: 0.90rem; margin: 0; padding: 0;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        #theme-toggle {
+            position: fixed; top: 20px; right: 20px;
+            background: transparent; border: 1px solid var(--color-border);
+            color: var(--color-link); padding: 6px 12px; font-size: 0.65rem;
+            cursor: pointer; border-radius: 4px; text-transform: uppercase; z-index: 1000;
+        }
+
+        header.top-logo { padding: 60px 20px 40px 20px; display: flex; justify-content: center; }
+        h1.logo-container { display: flex; align-items: center; max-width: 600px; width: 100%; margin: 0; }
+        .logo-mark { width: 18%; height: auto; }
+        .wordmark { width: 82%; height: auto; transition: filter 0.3s; }
+
+        .main-container { max-width: 700px; margin: 0 auto; padding: 0 20px 100px 20px; }
+        .letter-section { text-align: center; margin-bottom: 60px; }
+        .letter-section p { margin-bottom: 1.5rem; }
+        .letter-section a { color: var(--color-accent); text-decoration: none; font-weight: bold; }
+        .letter-section a:hover { text-decoration: underline; }
+
+        .archive-section { border-top: 1px solid var(--color-border); padding-top: 40px; margin-top: 40px; }
+        .archive-section h2 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--color-link); text-align: center; margin-bottom: 30px; }
+        #video-feed { display: grid; gap: 20px; }
+        .video-item {
+            display: flex; align-items: center; gap: 15px; text-decoration: none; color: inherit;
+            padding: 10px; border: 1px solid transparent; transition: border 0.3s;
+        }
+        .video-item:hover { border-color: var(--color-border); }
+        .video-thumb { width: 120px; height: 67px; background-size: cover; background-position: center; border-radius: 2px; flex-shrink: 0; }
+        .video-title { font-size: 0.85rem; font-weight: 500; line-height: 1.3; }
+        
+        .view-all { text-align: center; margin-top: 30px; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; }
+        .view-all a { color: var(--color-link); text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <button id="theme-toggle">Mode</button>
+
+    <header class="top-logo">
+        <h1 class="logo-container">
+            <img src="https://raw.githubusercontent.com/antisteez/antisteez.github.io/refs/heads/main/antisteez-2026-logomark.svg" class="logo-mark" alt="Antisteez">
+            <img src="https://raw.githubusercontent.com/antisteez/antisteez.github.io/refs/heads/main/antisteez-2026-wordmark.svg" class="wordmark" alt="Antisteez">
+        </h1>
+    </header>
+
+    <main class="main-container">
+        <section class="letter-section">
+            <p>I never intended for the music to go silent.</p>
+
+            <p>For a long time, Antisteez was built on a specific kind of raw energy. I had a vision for what this was supposed to be, but as time went on, that underground spirit started to drift toward something that <em>didn't feel like home anymore</em>. Internal friction eventually made the weight too much to carry, and I stepped back and handed the keys over, hoping the vision would stay intact. Instead, the site just died shortly after I left.</p>
+
+            <p>The servers stopped and the conversation just cut out. I spent years watching it stay that way. I watched Antisteez become a memory gathering dust while the domain danced around different owners who had nothing to do with us. People loved the site while it was around, but for most, it was easy to just move on to the next thing. <strong>I never did.</strong> This was my baby, and seeing the Antisteez community flatline was a <em>heavy silence</em> to live with.</p>
+
+            <p>Aging has a way of showing you the things you couldn't see in the heat of the moment. I’ve realized that some things are too important to stay buried just because of how things ended or the pride that followed the fallout. Antisteez was never just a bunch of random words and a collection of digital files. It was a <strong>timestamp</strong> for a lot of us. It was a shared language built by the writers who put their heart into the words and the vision. It was driven by the pulse of the Antisteez mixes—a massive nod to <strong>my brother Guilletine</strong>, who was the backbone of that sound and kept the culture moving. Without that synergy, none of it would have mattered.</p>
+
+            <p>We saw <strong>music scenes in Miami grow</strong> and find their footing because of what we were doing here. Beyond the music, <strong>real relationships and families started</strong> because of the space Antisteez created. That’s something you can’t just walk away from.</p>
+
+            <p>While this isn't a return to the old days or a promise of a new beginning for Antisteez, I couldn't let those contributions disappear forever. These sounds and stories are a part of us and they deserve a home. To celebrate 15 years, the old Antisteez podcast mixes are finally finding their way back to the light on <a href="https://www.youtube.com/@Gotchaopin" target="_blank">@Gotchaopin</a>. This isn't an attempt to rebuild the past, but a way to finally honor the work and the people behind it. It’s a way to close a door that was left hanging open for too long—because even after all this time, <strong>there is still a message involved</strong>.</p>
+
+            <p>This letter, and these mixes, are for you. Thanks for still being here.</p>
+            <br>
+            <p>— <a href="mailto:lou@antisteez.com">Lou</a></p>
+        </section>
+
+        <section class="archive-section">
+            <h2>Latest from the Archives</h2>
+            <div id="video-feed">Connecting to @Gotchaopin...</div>
+            <div class="view-all"><a href="https://www.youtube.com/@Gotchaopin" target="_blank">View All Mixes →</a></div>
+        </section>
+    </main>
+
+    <script>
+        document.getElementById('theme-toggle').addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+        });
+
+        const channelID = 'UC-Zu1Q7WQ66StAHZmK-vx2g'; 
+
+        const rssUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${channelID}`;
+        const fetchUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+
+        fetch(fetchUrl)
+            .then(res => res.json())
+            .then(data => {
+                const feed = document.getElementById('video-feed');
+                if (data.status === 'ok' && data.items.length > 0) {
+                    const videos = data.items.slice(0, 5);
+                    feed.innerHTML = videos.map(v => `
+                        <a href="${v.link}" class="video-item" target="_blank">
+                            <div class="video-thumb" style="background-image: url('${v.thumbnail}')"></div>
+                            <div class="video-title">${v.title}</div>
+                        </a>
+                    `).join('');
+                } else {
+                    feed.innerHTML = '<p style="text-align:center; opacity:0.6;">Check the archives on <a href="https://www.youtube.com/@Gotchaopin" style="color:var(--color-accent)">YouTube</a>.</p>';
+                }
+            })
+            .catch(() => {
+                document.getElementById('video-feed').innerHTML = '<p style="text-align:center; opacity:0.6;">Unable to load feed.</p>';
+            });
+    </script>
+    
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7bfaa1a06aca411ba268a2ce1c75e563"}'></script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Antisteez.com</title>
     <meta name="title" content="Antisteez.com">
